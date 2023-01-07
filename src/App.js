@@ -1,11 +1,24 @@
-import './App.css';
-
+import "./App.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Login from "./Pages/Login";
+import SignUp from "./Pages/SignUp";
+import Home from "./Pages/Home";
 function App() {
-  return (
-    <div className="App">
-      <h1>Icon Movies</h1>
-    </div>
-  );
+	const router = createBrowserRouter([
+		{
+			path: "/auth/login",
+			element: <Login />,
+		},
+		{
+			path: "/auth/signup",
+			element: <SignUp />,
+		},
+		{
+			path: "/",
+			element: <Home />,
+		},
+	]);
+	return <RouterProvider router={router} />;
 }
 
 export default App;
