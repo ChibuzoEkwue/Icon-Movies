@@ -1,0 +1,38 @@
+.featured {
+    height: 90vh;
+    position: relative;
+    background-image: linear-gradient(to right, #000000 100%, #62b6b7 0%);
+
+    overflow: hidden;
+}
+
+
+
+.featured img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+}
+
+.info {
+    position: absolute;
+    top: 70px;
+    left: 30px;
+    width: 50%;
+    font-size: 30px;
+    color: white;
+}
+
+.info span {
+    font-size: 0.9em;
+}
+
+button {
+    padding: 15px 45px;
+    margin-top: 25px;
+    font-size: 15px;
+    background-color: #97DECE;
+    border-radius: 12px;
+    border: none;
+}
