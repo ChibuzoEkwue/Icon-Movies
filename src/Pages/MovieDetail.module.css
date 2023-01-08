@@ -1,0 +1,56 @@
+.body {
+    height: 89vh;
+    position: relative;
+    background-image: linear-gradient(to right, #000000 100%, #62b6b7 0%);
+    overflow: hidden;
+}
+
+
+
+.body img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+}
+
+.info {
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    width: 50%;
+    font-size: 30px;
+    color: white;
+    z-index: 1000;
+}
+
+.meta {
+    font-size: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.genre {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.desc {
+    font-size: 0.7em;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.buttons button{
+    background-color: #62b6b7;
+    color:white;
+}
