@@ -1,10 +1,10 @@
 import styles from "./featured.module.css";
 const Featured = () => {
 	const data = {
-		backdrop_path: "/6mEYUYdkKoVCMeYf3rTFj0L1uyv.jpg",
+		backdrop_path: "/5pMy5LF2JAleBNBtuzizfCMWM7k.jpg",
 		overview:
-			"When a team of mercenaries breaks into a wealthy family compound on Christmas Eve, taking everyone inside hostage, the team isn’t prepared for a surprise combatant: Santa Claus is on the grounds, and he’s about to show why this Nick is no saint.",
-title: "Violent Night",
+			"The harrowing true story of two elite US Navy fighter pilots during the Korean War. Their heroic sacrifices would ultimately make them the Navy's most celebrated wingmen.",
+		title: "Devotion",
 	};
 	return (
 		<div className={styles.featured}>
