@@ -7,6 +7,7 @@ import Layout from "./Components/Layout";
 import Movies from "./Pages/Movies";
 import Series from "./Pages/Series";
 import MovieDetails from "./Pages/MovieDetails";
+import SeriesDetails from "./Pages/SeriesDetails"
 function App() {
 	const router = createBrowserRouter([
 		{
@@ -30,12 +31,16 @@ function App() {
 					element: <Movies />,
 				},
 				{
-					path: "/movies/moviedetail/:id",
+					path: "/movies/:id",
 					element: <MovieDetails />,
 				},
 				{
 					path: "/series",
 					element: <Series />,
+				},
+				{
+					path: "/series/:id",
+					element: <SeriesDetails />,
 				},
 			],
 		},
