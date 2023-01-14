@@ -1,6 +1,7 @@
 import Featured from "../Components/Featured";
 import Container from "@mui/material/Container";
 import Groups from "../Components/Groups";
+import { Helmet } from "react-helmet-async";
 const Home = () => {
 	const series = [
 		{
@@ -27,10 +28,11 @@ const Home = () => {
 	];
 	const movies = [
 		{
-			id: 661374,
-			poster_path: "/vDGr1YdrlfbU9wxTOdpf3zChmv9.jpg",
-			name: "Glass Onion: A Knives Out Mystery",
+			id: 653851,
+			poster_path: "/26yQPXymbWeCLKwcmyL8dRjAzth.jpg",
+			name: "Devotion",
 		},
+		
 		{
 			id: 76600,
 			poster_path: "/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
@@ -49,10 +51,13 @@ const Home = () => {
 	];
 	return (
 		<>
+		<Helmet>
+			<title>Icon Movies</title>
+		</Helmet>
 			<Featured />
 			<Container>
-				<Groups data={series} heading='Top Series' path='/series'  />
-				<Groups data={movies} heading='Top Movies' path='/movies'  />
+				<Groups data={series} heading="Top Series" path="/series" />
+				<Groups data={movies} heading="Top Movies" path="/movies" />
 			</Container>
 		</>
 	);

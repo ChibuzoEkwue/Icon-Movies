@@ -3,23 +3,24 @@ import Rating from "@mui/material/Rating";
 import Chip from "@mui/material/Chip";
 import Backdrop from "@mui/material/Backdrop";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 const data = {
 	adult: false,
-	backdrop_path: "/xDMIl84Qo5Tsu62c9DGWhmPI67A.jpg",
-	genre_ids: ["Action", "Adventure", "Science Fiction"],
-	id: 505642,
+	backdrop_path: "/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg",
+	genre_ids: ["Action", "Fantasy", "Science Fiction"],
+	id: 436270,
 	original_language: "en",
-	original_title: "Black Panther: Wakanda Forever",
+	original_title: "Black Adam",
 	overview:
-		"Queen Ramonda, Shuri, M’Baku, Okoye and the Dora Milaje fight to protect their nation from intervening world powers in the wake of King T’Challa’s death. As the Wakandans strive to embrace their next chapter, the heroes must band together with the help of War Dog Nakia and Everett Ross and forge a new path for the kingdom of Wakanda.",
-	popularity: 1478.157,
-	poster_path: "/sv1xJUazXeYqALzczSZ3O6nkH75.jpg",
-	release_date: "2022-11-09",
-	title: "Black Panther: Wakanda Forever",
+		"Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods—and imprisoned just as quickly—Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world.",
+	popularity: 3025.564,
+	poster_path: "/pFlaoHTZeyNkG83vxsAJiGzfSsa.jpg",
+	release_date: "2022-10-19",
+	title: "Black Adam",
 	video: false,
-	vote_average: 7.5,
-	vote_count: 1553,
-	trailer: ["RlOB3UALvrQ", "_Z3QKkl1WyM"],
+	vote_average: 7.2,
+	vote_count: 3495,
+	trailer: ["X0tOpBuYasI", "mkomfZHG5q4"],
 };
 
 const MovieDetails = () => {
@@ -35,6 +36,9 @@ const MovieDetails = () => {
 	};
 	return (
 		<>
+			<Helmet>
+				<title>{data.title} | Icon Movies</title>
+			</Helmet>
 			{open && (
 				<div>
 					<Backdrop
