@@ -4,26 +4,13 @@ import Chip from "@mui/material/Chip";
 import Backdrop from "@mui/material/Backdrop";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
-const data = {
-	adult: false,
-	backdrop_path: "/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg",
-	genre_ids: ["Action", "Fantasy", "Science Fiction"],
-	id: 436270,
-	original_language: "en",
-	original_title: "Black Adam",
-	overview:
-		"Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods—and imprisoned just as quickly—Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world.",
-	popularity: 3025.564,
-	poster_path: "/pFlaoHTZeyNkG83vxsAJiGzfSsa.jpg",
-	release_date: "2022-10-19",
-	title: "Black Adam",
-	video: false,
-	vote_average: 7.2,
-	vote_count: 3495,
-	trailer: ["X0tOpBuYasI", "mkomfZHG5q4"],
-};
+import { useLoaderData } from "react-router-dom";
 
 const MovieDetails = () => {
+	const data = useLoaderData();
+	const genre = JSON.parse(data[0].genre);
+
+	const movieTrailer = JSON.parse(data[0].trailer);
 	const [trailer, setTrailer] = useState(null);
 
 	const [open, setOpen] = useState(false);
@@ -37,7 +24,7 @@ const MovieDetails = () => {
 	return (
 		<>
 			<Helmet>
-				<title>{data.title} | Icon Movies</title>
+				<title>{data[0].title} | Icon Movies</title>
 			</Helmet>
 			{open && (
 				<div>
@@ -61,16 +48,17 @@ const MovieDetails = () => {
 			<div className={styles.body}>
 				<div className={styles.overlay}>
 					<img
-						src={"https://image.tmdb.org/t/p/original" + data.backdrop_path}
-						alt={data.title}
+						src={"https://image.tmdb.org/t/p/original" + data[0].backdrop}
+						alt={data[0].title}
 					/>
 					<div className={styles.info}>
-						<h2>{data.title}</h2>
+						<h2>{data[0].title}</h2>
 						<div className={styles.meta}>
-							<Rating name="read-only" value={data.vote_average} readOnly />
+							<Rating name="read-only" value={data[0].rating} readOnly />
 							<div className={styles.genre}>
-								{data.genre_ids.map((genre) => (
+								{genre.map((genre, index) => (
 									<Chip
+										key={index}
 										label={genre}
 										style={{
 											color: "black",
@@ -81,13 +69,14 @@ const MovieDetails = () => {
 								))}
 							</div>
 						</div>
-						<span className={styles.desc}>{data.overview}</span>
+						<span className={styles.desc}>{data[0].overview}</span>
 						<div className={styles.buttons}>
-							{data.trailer.map((e, index) => (
+							{movieTrailer.map((e, index) => (
 								<button
 									onClick={() => {
 										handleToggle(e);
 									}}
+									key={index}
 								>
 									Watch Trailer {index + 1}
 								</button>
